@@ -1,6 +1,6 @@
-const express = require("express");
-const OpenAI = require("openai");
-const dotenv = require("dotenv");
+import express from "express";
+import OpenAI from "openai";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -21,10 +21,10 @@ const DEFAULT_ROLE = "Tu es un assistant très poli, clair et concis";
 app.post("/ask", async (req, res) => {
   try {
     const { prompt, roleContent } = req.body;
-    const messages = [];
-
-    messages.push({ role: "system", content: roleContent || DEFAULT_ROLE });
-    messages.push({ role: "user", content: prompt });
+    const messages = [
+      { role: "system", content: roleContent || DEFAULT_ROLE },
+      { role: "user", content: prompt },
+    ];
 
     const completion = await openai.chat.completions.create({
       model: "deepseek/deepseek-chat-v3.1:free",
