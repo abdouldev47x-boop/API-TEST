@@ -21,7 +21,7 @@ app.post("/ask", async (req, res) => {
   try {
     const { prompt } = req.body;
     const completion = await openai.chat.completions.create({
-      model: "meta-llama/llama-3.3-8b-instruct:free",//ici tu met le modèle de l'api que tu as copier sur openrouter
+      model: "deepseek/deepseek-chat-v3.1:free",//ici tu met le modèle de l'api que tu as copier sur openrouter
       messages: [{ role: "user", content: prompt }],
     });
 
