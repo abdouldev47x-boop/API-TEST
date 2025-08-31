@@ -1,6 +1,7 @@
 {
-  "name": "openrouter-api",
+  "name": "api-test",
   "version": "1.0.0",
+  "description": "API Chat avec OpenRouter",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -8,7 +9,7 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "openai": "^4.0.0",
-    "dotenv": "^16.4.0"
+    "dotenv": "^16.3.1",
+    "openai": "^4.27.1"
   }
 }
